@@ -25,6 +25,7 @@ To run this project, follow these steps:
 ### Local Environment Setup
 
 1. Create a virtual environment (optional but recommended):
+
    ```shell
    python -m venv .venv
    source .venv/bin/activate  # For Unix/macOS
@@ -36,11 +37,12 @@ To run this project, follow these steps:
    ```shell
    pip install boto3
    ```
+
 3. Place the credentials CSV file you downloaded from AWS in your project directory.
 
 4. Update the bucket_name variable in the script to match the name of your S3 bucket.
 
-5. Place the images you want to sort in a directory named `../images/` relative to the script or modify the images_local_path variable in the script accordingly.
+5. Place the images you want to sort in a directory named `./images/` relative to the script or modify the images_local_path variable in the script accordingly.
 
 ## Running the Script
 
@@ -51,5 +53,3 @@ python .\celebrity_image_sorter.py
 ```
 
 The script will upload images from your specified directory to the S3 bucket, sort them into folders named after the recognized celebrities using AWS Rekognition, and move them into the sorted/ folder within your S3 bucket.
-
-
