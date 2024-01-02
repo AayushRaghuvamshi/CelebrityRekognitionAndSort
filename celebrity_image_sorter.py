@@ -1,6 +1,10 @@
 import csv
 import boto3
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 def load_credentials(filepath):
     with open(filepath, 'r') as input_file:
@@ -47,12 +51,13 @@ def sort_images(s3_resource, rekognition_client, bucket_name, unsorted_prefix, s
                 object_summary.delete()  # Delete after copying
 
 # Main execution starts here
+# Now access the variables as environment variables
 credentials_path = 'credentials.csv'
-bucket_name = "aayushsfirstbucket"
-region_name = 'us-west-2'
-images_local_path = '../images/'
-unsorted_folder = "unsorted/"
-sorted_folder = "sorted/"
+images_local_path = './images/'
+bucket_name = os.getenv('AWS_BUCKET_NAME')
+region_name = os.getenv('AWS_REGION')
+unsorted_folder = os.getenv('UNSORTED_FOLDER')
+sorted_folder = os.getenv('SORTED_FOLDER')
 
 access_key_id, secret_access_key = load_credentials(credentials_path)
 
