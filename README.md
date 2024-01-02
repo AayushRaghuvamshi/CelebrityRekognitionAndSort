@@ -32,10 +32,11 @@ To run this project, follow these steps:
    .venv\Scripts\activate  # For Windows
    ```
 
-2. Install `boto3` using pip:
+2. Install `boto3` and `dotenv` using pip:
 
    ```shell
    pip install boto3
+   pip install python-dotenv
    ```
 
 3. Place the credentials CSV file you downloaded from AWS in your project directory.
@@ -43,6 +44,14 @@ To run this project, follow these steps:
 4. Update the bucket_name variable in the script to match the name of your S3 bucket.
 
 5. Place the images you want to sort in a directory named `./images/` relative to the script or modify the images_local_path variable in the script accordingly.
+
+6. Create a `.env` file in the root directory, and fill in the following fields:
+   ```
+   AWS_BUCKET_NAME=bucket_name
+   AWS_REGION=your_region
+   UNSORTED_FOLDER=unsorted/
+   SORTED_FOLDER=sorted/
+   ```
 
 ## Running the Script
 
