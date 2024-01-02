@@ -47,7 +47,7 @@ To run this project, follow these steps:
 Execute the script from the command line:
 
 ```shell
-python .\aws\celebrity_image_sorter.py
+python .\celebrity_image_sorter.py
 ```
 
 The script will upload images from your specified directory to the S3 bucket, sort them into folders named after the recognized celebrities using AWS Rekognition, and move them into the sorted/ folder within your S3 bucket.
